@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookiepass-dialog</title>
+  <link href="./css/cookiepass-template.css" rel="stylesheet"></head>
+  <body>
+    <button type="button" onclick="document.getElementById(&quot;cookie-modal&quot;).showModal()" style="z-index: 990000; position: relative;">dialogボタン</button>
+    <dialog id="cookie-modal">
+      <h1>タイトル質問文</h1>
+      <p class="warning" id="warning"><strong>NOボタン押したときに表示される警告文</strong></p>
+      <div class="btn-wrap">
+        <button id="btnYes"><span class="btn-text">YES</span><br><span class="btn-caption">Yesボタンの説明文</span></button>
+        <button id="btnNo" type="button" onclick="this.closest(&quot;dialog&quot;).close();"><span class="btn-text">NO</span><br><span class="btn-caption">Noボタンの説明文</span></button>
+      </div>
+      <p class="caution">*最下部の説明文</p>
+    </dialog>
+  <script defer src="./js/cookiepass-template.js"></script></body>
+</html>

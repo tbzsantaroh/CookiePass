@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookiepass</title>
+  <link href="./css/cookiepass.css" rel="stylesheet"></head>
+  <body>
+    <body data-cookiepass_lang="ja">
+      <div style="background:white;">
+        <h1>動作サンプルページ</h1>
+        <button type="button" onclick="document.cookie = &quot;cookiepassyes=true; max-age=0&quot;;location.reload();" style="z-index: 990000; position: relative;">CookieDelete & Reload ボタン</button>
+        <p>このボタンを押すと、Cookieが削除され、ページを再読み込みする。<br>ので、ポップアップが再度表示される。</p>
+      </div>
+    <script defer src="./js/cookiepass.js"></script></body>
+  </body>
+</html>
