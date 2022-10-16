@@ -1,6 +1,12 @@
 import '@scss/sample-base.scss';  // 背景ボケてるか確認用の共用CSS
 import '@scss/cookiepass.scss'; // スタイルシート読み込み
 
+// cookie消す&リロードするボタン
+const btnCookieDel = (<HTMLButtonElement>document.querySelector('button#cookiedel'));
+btnCookieDel.addEventListener('click', () => {
+  document.cookie = 'cookiepassyes=true; path=/; max-age=0';
+  location.reload();
+});
 
 import { cookiepass } from './import/_CookiePass';
 

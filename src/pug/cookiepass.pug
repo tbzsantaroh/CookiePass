@@ -10,6 +10,6 @@ block article
     div(style='background:white;')
       h1 動作サンプルページ
 
-      <button type='button' onclick='document.cookie = "cookiepassyes=true; max-age=0"; location.reload();' style='z-index: 990000; position: relative;'>CookieDelete to Reload</button>
+      button(type='button' style='z-index: 990000; position: relative;')#cookiedel CookieDelete to Reload
 
       p このボタンを押すと、Cookieが削除され、ページをリロードする。
