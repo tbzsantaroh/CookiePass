@@ -4,7 +4,7 @@ webページに全画面の確認ポップアップを表示、Yesボタンを�
 ついでに、html側で言語指定して表示テキスト切り替え可能。  
 というスクリプト。
 
-🍣github pagesの動作デモlink
+[動作demo](https://tbzsantaroh.github.io/CookiePass/dist/)
 
 ## Dependency
 
