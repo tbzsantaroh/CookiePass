@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使い方とサンプル選択</title>
+  </head>
+  <body>
+    <h1>使い方とサンプル</h1>
+    <h2>cookiepass</h2>
+    <ul>
+      <li><a href="cookiepass.html">cookiepass demo</a></li>
+      <li><a href="cookiepass-template.html">cookiepass html template (見た目作成用サンプル)</a></li>
+    </ul>
+    <hr>
+    <h2>説明</h2>
+    <pre><code>src/ts/import/_CookiePass.ts<br></code><code>src/scss/cookiepass.scss</code></pre>
+    <h4>使い方</h4>
+    <ol>
+      <li>このポップアップを表示したいhtmlのbody要素に <pre><code>&lt;body data-cookiepass_lang='ja'&gt;</code></pre> で、data属性を指定する。</li>
+      <li>使いたいhtml内のjsで <pre><code>import { cookiepass } from './import/_CookiePass';</code></pre> で、 ファイル読み込み。</li>
+      <li><pre><code>cookiepass();</code></pre> で実行。 ()内に表示したいテキストの設定を入れる。</li>
+    </ol>
+    <h4>使い方実用サンプル</h4>
+    <pre><code>import { cookiepass } from './_CookiePass';
+cookiepass([
+  {
+    lang: 'ja',
+    h1: '日本語文サンプル',
+    warning: 'そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。',
+    yes: 'はい',
+    no: 'いいえ',
+    caution: 'それだけなら、そんなにめずらしいことでもありませんでした。さらにアリスとしては、そのうさぎが「どうしよう！どうしよう！ちこくしちゃうぞ！」とつぶやくのを聞いたときも、それがそんなにへんてこだとは思いませんでした'
+  },
+  {
+    lang: 'en',
+    h1: 'en sample text',
+    warning: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+    yes: '',
+    no: '',
+    caution: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  },
+  {
+    lang: 'tc',
+    h1: '繁体字サンプル',
+    warning: 'そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。',
+    yes: '',
+    no: '',
+    caution: 'それだけなら、そんなにめずらしいことでもありませんでした。さらにアリスとしては、そのうさぎが「どうしよう！どうしよう！ちこくしちゃうぞ！」とつぶやくのを聞いたときも、それがそんなにへんてこだとは思いませんでした'
+  },
+  {
+    lang: 'sc',
+    h1: '簡体字サンプル',
+    warning: 'そこへいきなり、ピンクの目をした白うさぎが近くを走ってきたのです。',
+    yes: '',
+    no: '',
+    caution: 'それだけなら、そんなにめずらしいことでもありませんでした。さらにアリスとしては、そのうさぎが「どうしよう！どうしよう！ちこくしちゃうぞ！」とつぶやくのを聞いたときも、それがそんなにへんてこだとは思いませんでした'
+  }
+]);
+</code></pre>
+    <p>てな感じに書く。</p>
+  </body>
+</html>

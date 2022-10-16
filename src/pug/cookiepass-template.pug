@@ -1,0 +1,28 @@
+extends template/_main.pug
+
+block varlist
+  - const PageTitle = 'cookiepass-dialog';
+
+
+block article
+  button(type='button' onclick='document.getElementById("cookie-modal").showModal()' style='z-index: 990000; position: relative;') dialogボタン
+
+  dialog#cookie-modal
+
+    h1 タイトル質問文
+
+    //- この警告文が短いと、Yes Noボタンが縦並びになる
+    p.warning#warning: strong NOボタン押したときに表示される警告文
+
+    .btn-wrap
+      button#btnYes
+        //- 他言語に差し替えする際にquerySelectorで要素指定できるように、spanで個別にくくる
+        span.btn-text YES
+        <br>
+        span.btn-caption Yesボタンの説明文
+      button#btnNo(type='button' onclick='this.closest("dialog").close();')
+        span.btn-text NO
+        <br>
+        span.btn-caption Noボタンの説明文
+
+    p.caution *最下部の説明文

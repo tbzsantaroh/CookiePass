@@ -1,0 +1,130 @@
+#cookie-modal { // このスクリプトは1htmlに1つだけのものなのでIDでCSS指定
+  max-height: 100vh;  // 画面に収まりきらないときはスクロールバー出すため、最大縦幅を制限する
+  padding: 0.5rem 2%; // 標準styleは0じゃないので上書き必須
+  overflow-y: auto; // 画面に収まりきらないときはスクロールバー出す
+  color: #333;
+  text-align: center;
+  word-wrap: break-word;  // これ無いとmobile表示で英字の改行ができない(横スクロールバー出る)
+  background: linear-gradient(to bottom, #fff 0%, #eee 95%);
+  border: 0;  // 標準style削除
+  border-radius: 3px;
+  box-shadow: 0 0 30px #000;
+
+  :focus {
+    outline: none;  // アクティブ時にフォーカスが変更される、dialog特有の動作のせいで、ボタンに枠線が出るのを非表示にする
+  }
+
+  &::backdrop { // 背景
+    backdrop-filter: blur(30px);  // 背景ぼかし
+  }
+
+  &[open] { // 開いた時
+    animation: show-dialog 0.5s ease; // アニメーション
+
+    &::backdrop { // 開いたときの背景
+      // animation: show-backdrop 0.25s linear;  // アニメーション  最初はアニメーションなしで即表示する
+    }
+  }
+
+  &.close {  // 閉じる時 js側で有効化するためclass指定
+    animation: hide-dialog 0.5s ease forwards; // アニメーション
+
+    &::backdrop { // 閉じたときの背景
+      animation: hide-backdrop 0.25s linear forwards;  // アニメーション
+    }
+  }
+
+  h1 {  // タイトル質問文
+    padding: 2rem 0.3rem;
+    margin: 2rem 0;
+    font-family: serif, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.2;
+    color: white;
+    background: #f69;
+    border: 3px double #fff;
+    border-radius: 10px;
+  }
+
+  .warning {  // NOボタン押したとき真ん中に表示される文字
+    color: red;
+    text-decoration: underline;
+    transition: all 0.3s linear;
+    transform: scaleY(0); // No押すまで非表示にするため高さ0にする
+  }
+
+  .btn-wrap { // ボタングループのラッパー
+    margin: 2rem 0;
+  }
+
+  button {  // ボタンの設定全般
+    padding: 0.5rem 10%;
+    text-shadow: 2px 3px 2px #bbb;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #fff 0%, #ddd 95%);
+    border: 1px solid #999;
+    box-shadow: 2px 3px 0 #555;
+    transition: all 0.1s linear; // hoverしたときのアニメーション速度
+
+    &:hover {
+      text-shadow: 1px 1px 0 #ccc;
+      box-shadow: 1px 1px 0 #222;
+      transform: translateY(2px);
+    }
+  }
+
+  .btn-text { // ボタンのYes Noの部分
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .caution {  // 下段の注釈
+    font-size: 0.7rem;
+    text-align: left;
+  }
+}
+
+@keyframes show-backdrop {  // 背景のアニメーション内容
+  from {
+    opacity: 0.75;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-backdrop {  // 背景のアニメーション内容
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show-dialog {  // dialog全体のアニメーション内容
+  from {
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide-dialog {  // dialog全体のアニメーション内容
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+}

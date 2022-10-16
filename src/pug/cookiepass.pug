@@ -1,0 +1,15 @@
+extends template/_main.pug
+
+block varlist
+  - const PageTitle = 'cookiepass';
+
+
+block article
+  body(data-cookiepass_lang="ja")
+
+    div(style='background:white;')
+      h1 動作サンプルページ
+
+      button(type='button' onclick='document.cookie = "cookiepassyes=true; max-age=0";location.reload();' style='z-index: 990000; position: relative;') CookieDelete & Reload ボタン
+
+      p このボタンを押すと、Cookieが削除され、ページを再読み込みする。<br>ので、ポップアップが再度表示される。
